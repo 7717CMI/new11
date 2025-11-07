@@ -1,14 +1,14 @@
-# Customer Intelligence Dashboard
+# Customer Intelligence Dashboard - TypeScript/Next.js
 
-A professional, interactive dashboard built with Python, Plotly, and Dash for visualizing customer optimization opportunities across cloud platforms and enterprise licenses.
+A professional, industrial-level customer intelligence dashboard built with Next.js 14, TypeScript, React, and Plotly.js for visualizing customer optimization opportunities across cloud platforms and enterprise licenses.
 
-![Dashboard Preview](https://img.shields.io/badge/Status-Ready-brightgreen) ![Python](https://img.shields.io/badge/Python-3.9+-blue) ![Dash](https://img.shields.io/badge/Dash-2.14+-orange)
+![Dashboard Preview](https://img.shields.io/badge/Status-Ready-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue) ![Plotly](https://img.shields.io/badge/Plotly-2.29-orange)
 
 ## Features
 
 ### 📊 Comprehensive Visualizations
 - **KPI Cards**: Real-time metrics for total customers, optimization potential, and opportunities
-- **Interactive Charts**: Bar charts, pie charts, scatter plots, grouped and stacked visualizations
+- **Interactive Charts**: Bar charts, pie charts, scatter plots, grouped and stacked visualizations using Plotly.js
 - **Data Tables**: Sortable, filterable customer data with detailed information
 - **Advanced Analytics**: Deep-dive analysis with license breakdowns, regional insights, and trigger events
 
@@ -21,14 +21,21 @@ A professional, interactive dashboard built with Python, Plotly, and Dash for vi
 - Filter by Optimization Potential range
 
 ### 📱 Responsive Design
-- Mobile-friendly layout
-- Collapsible sidebar navigation
-- Professional color scheme with standard business colors
+- Mobile-friendly layout with collapsible navigation
+- Professional industrial color scheme
 - Smooth animations and transitions
+- Tailwind CSS for modern styling
 
 ### 💾 Data Export
 - Export filtered customer data to CSV
 - Download functionality on Customer Details page
+
+### 🏢 Industrial-Level Features
+- **COHERENT MARKET INSIGHTS** branding in top-left corner
+- Standard industrial color palette
+- Professional chart styling matching original design
+- Type-safe TypeScript implementation
+- Server-side rendering with Next.js 14 App Router
 
 ## Dashboard Pages
 
@@ -60,104 +67,115 @@ A professional, interactive dashboard built with Python, Plotly, and Dash for vi
 ## Installation
 
 ### Prerequisites
-- Python 3.9 or higher
-- pip package manager
+- Node.js 18+ 
+- npm or yarn
 
 ### Setup Instructions
 
-1. **Navigate to the project directory:**
+1. **Install dependencies:**
    ```bash
-   cd customer-intelligence-dashboard
+   npm install
    ```
 
-2. **Create a virtual environment (recommended):**
+2. **Ensure data file exists:**
+   The CSV data file should be located at `public/data/customers.csv`. If it doesn't exist, the app will handle it gracefully.
+
+3. **Run the development server:**
    ```bash
-   # Windows
-   python -m venv venv
-   venv\Scripts\activate
-
-   # macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
+   npm run dev
    ```
 
-3. **Install required packages:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-4. **Generate sample data (optional - will auto-generate on first run):**
-   ```bash
-   cd data
-   python data_generator.py
-   cd ..
-   ```
+## Deployment to Vercel (Serverless)
 
-## Usage
+This application is fully optimized for serverless deployment on Vercel. No server configuration needed!
 
-### Running the Dashboard
+### Quick Deploy
 
-1. **Start the application:**
-   ```bash
-   python app.py
-   ```
+**Option 1: GitHub Integration (Recommended)**
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click "New Project" → Import your repository
+4. Vercel auto-detects Next.js configuration
+5. Click "Deploy" (takes ~2 minutes)
 
-2. **Open your web browser and navigate to:**
-   ```
-   http://127.0.0.1:8050
-   ```
+**Option 2: Vercel CLI**
+```bash
+npm i -g vercel
+vercel
+vercel --prod  # For production
+```
 
-3. **The dashboard will automatically:**
-   - Load customer data from `data/customers.csv`
-   - Generate 30 sample customers if no data file exists
-   - Display the Overview Dashboard by default
+### Serverless Features
 
-### Navigation
+- ✅ **Zero Configuration** - Works out of the box
+- ✅ **Auto-scaling** - Handles traffic spikes automatically
+- ✅ **Global CDN** - Fast loading worldwide
+- ✅ **Free Tier** - Generous free tier for most use cases
+- ✅ **Instant Deploys** - Deploy in seconds
 
-- **Sidebar Navigation** (desktop): Click on any page link in the left sidebar
-- **Top Navbar** (mobile): Use the hamburger menu to access pages
-- **Filters**: Use the filter section in the sidebar to narrow down customer data
-- **Reset Filters**: Click the "Reset Filters" button to clear all filters
-
-### Using Filters
-
-1. Select one or more options from any dropdown filter
-2. Adjust the optimization potential slider to set a range
-3. All visualizations update automatically
-4. Click "Reset Filters" to return to the full dataset
-
-### Exporting Data
-
-1. Navigate to the **Customer Details** page
-2. Apply any desired filters
-3. Click the **"Export to CSV"** button
-4. The filtered data will download as `customer_intelligence_export.csv`
+See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed deployment guide.
 
 ## Project Structure
 
 ```
 customer-intelligence-dashboard/
-├── app.py                          # Main application file
-├── requirements.txt                # Python dependencies
-├── README.md                       # This file
-│
-├── assets/
-│   └── styles.css                 # Custom CSS styling
-│
+├── app/
+│   ├── layout.tsx              # Root layout with branding
+│   ├── page.tsx                 # Overview dashboard page
+│   ├── customers/
+│   │   └── page.tsx            # Customer details page
+│   ├── analytics/
+│   │   └── page.tsx            # Analytics deep-dive page
+│   └── globals.css              # Global styles
 ├── components/
-│   ├── sidebar.py                 # Navigation sidebar component
-│   ├── filters.py                 # Multi-select filter components
-│   └── charts.py                  # Reusable Plotly chart functions
-│
-├── data/
-│   ├── customers.csv              # Customer data (auto-generated)
-│   └── data_generator.py          # Sample data generator script
-│
-└── pages/
-    ├── overview.py                # Overview dashboard page
-    ├── customer_details.py        # Customer details page with table
-    └── analytics.py               # Analytics deep-dive page
+│   ├── charts.tsx              # Plotly.js chart components
+│   ├── filters.tsx             # Filter components
+│   └── sidebar.tsx              # Navigation sidebar
+├── lib/
+│   ├── types.ts                # TypeScript interfaces
+│   ├── utils.ts                # Data loading and filtering utilities
+│   └── cn.ts                   # Utility functions
+├── public/
+│   └── data/
+│       └── customers.csv       # Customer data file
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+└── next.config.js
 ```
+
+## Technologies Used
+
+- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Plotly.js](https://plotly.com/javascript/)** - Interactive visualizations
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[PapaParse](https://www.papaparse.com/)** - CSV parsing
+- **Bootstrap Icons** - Icon library
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+
+### Color Palette
+
+The dashboard uses a standard industrial color palette:
+
+- **Primary**: `#2E86AB` (Professional Blue)
+- **Secondary**: `#A23B72` (Deep Magenta)
+- **Success**: `#06A77D` (Emerald Green)
+- **Warning**: `#F18F01` (Warm Orange)
+- **Danger**: `#C73E1D` (Brick Red)
+- **Info**: `#6A4C93` (Royal Purple)
 
 ## Data Schema
 
@@ -185,92 +203,55 @@ The dashboard uses the following customer data fields:
 | Fax | Contact fax |
 | Email | Contact email |
 | Website | Company website |
+| ... | Additional quantitative metrics |
 
 ## Customization
 
 ### Adding Your Own Data
 
 1. Prepare a CSV file with the schema above
-2. Save it as `data/customers.csv`
-3. Restart the application
+2. Save it as `public/data/customers.csv`
+3. Restart the development server
 
 ### Modifying Colors
 
-Edit the color palette in `components/charts.py`:
+Edit the color palette in `lib/types.ts` and `tailwind.config.ts`:
 
-```python
-COLORS = {
-    'primary': '#2E86AB',      # Professional Blue
-    'secondary': '#A23B72',    # Deep Magenta
-    'success': '#06A77D',      # Emerald Green
-    'warning': '#F18F01',      # Warm Orange
-    # ... add more colors
+```typescript
+export const COLORS = {
+  primary: '#2E86AB',
+  // ... add more colors
 }
 ```
 
 ### Adding New Charts
 
-1. Create new chart functions in `components/charts.py`
-2. Import and use them in any page module
-3. Add to the page layout with `dcc.Graph()`
-
-## Technologies Used
-
-- **[Dash](https://dash.plotly.com/)** - Web framework for Python
-- **[Plotly](https://plotly.com/python/)** - Interactive visualizations
-- **[Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)** - Responsive layout components
-- **[Pandas](https://pandas.pydata.org/)** - Data manipulation and analysis
-- **Bootstrap Icons** - Icon library
-
-## Troubleshooting
-
-### Port Already in Use
-If port 8050 is already in use, modify the port in `app.py`:
-```python
-app.run_server(debug=True, host='127.0.0.1', port=8051)  # Change to 8051 or any available port
-```
-
-### Missing Data File
-The app will automatically generate sample data if `data/customers.csv` doesn't exist.
-
-### Module Import Errors
-Ensure all dependencies are installed:
-```bash
-pip install -r requirements.txt --upgrade
-```
+1. Create new chart functions in `components/charts.tsx`
+2. Import and use them in any page component
+3. Charts use Plotly.js for consistency with original design
 
 ## Performance Tips
 
 - For large datasets (>1000 customers), consider implementing pagination
 - Use server-side filtering for datasets with >5000 records
-- Enable caching for expensive computations using `@cache.memoize()`
+- Enable Next.js caching for expensive computations
+- Consider using React Server Components for data fetching
 
-## Future Enhancements
+## Migration Notes
 
-- [ ] User authentication and role-based access
-- [ ] Database integration (PostgreSQL, MongoDB)
-- [ ] Advanced filtering with saved filter presets
-- [ ] PDF report generation
-- [ ] Email integration for stakeholder outreach
-- [ ] API endpoints for data integration
-- [ ] Dark mode theme toggle
-- [ ] Interactive map for geographical visualization
-
-## Support
-
-For issues or questions:
-1. Check the [Dash documentation](https://dash.plotly.com/)
-2. Review the [Plotly documentation](https://plotly.com/python/)
-3. Examine the code comments in each module
+This TypeScript/Next.js version maintains:
+- ✅ Same chart styling and appearance as Python/Dash version
+- ✅ All filtering functionality
+- ✅ All visualization types
+- ✅ Same color scheme and industrial design
+- ✅ **COHERENT MARKET INSIGHTS** branding in top-left corner
 
 ## License
 
 This project is provided as-is for use in customer intelligence and optimization analysis.
 
-## Acknowledgments
-
-Inspired by modern data visualization best practices and the need for clear, actionable customer intelligence dashboards.
-
 ---
 
-**Built with ❤️ using Python, Plotly, and Dash**
+**Built with ❤️ using Next.js, TypeScript, React, and Plotly.js**
+
+**COHERENT MARKET INSIGHTS**

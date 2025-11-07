@@ -1,4 +1,48 @@
-# Python
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python (keep for reference)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -22,41 +66,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
-# Virtual Environment
 venv/
 ENV/
 env/
 .venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environment variables
-.env
-.env.local
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Database
-*.db
-*.sqlite
-
-# Dash cache
-.dash_cache/
-
-# Data (uncomment if you don't want to commit data files)
-# data/*.csv
-# !data/.gitkeep
