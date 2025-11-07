@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { loadCustomerData, applyFilters, getUniqueValues, FilterState } from '@/lib/utils'
-import { Customer } from '@/lib/types'
+import { loadCustomerData, applyFilters, getUniqueValues } from '@/lib/utils'
+import { Customer, FilterState } from '@/lib/types'
 import { Filters } from '@/components/filters'
 import { BarChart, PieChart, GroupedBarChart, ScatterChart } from '@/components/charts'
 import { COLORS } from '@/lib/types'

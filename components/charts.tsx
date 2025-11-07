@@ -59,7 +59,7 @@ export function BarChart({ data, xCol, yCol, title = '', color = COLORS.primary 
           width: 0.7,
           hovertemplate: '<b>%{x}</b><br>Count: %{y}<extra></extra>',
         },
-      ]}
+      ] as any}
       layout={{
         title: { text: title, x: 0.5, xanchor: 'center', font: { size: 16, color: '#212529' } },
         xaxis: {
@@ -77,7 +77,7 @@ export function BarChart({ data, xCol, yCol, title = '', color = COLORS.primary 
           gridcolor: 'rgba(200,200,200,0.3)',
           gridwidth: 1,
         },
-        template: 'plotly_white',
+        template: 'plotly_white' as any,
         height: 530,
         margin: { l: 60, r: 100, t: 100, b: 180 },
         font: { family: 'Arial, sans-serif', size: 12 },
@@ -107,7 +107,7 @@ export function PieChart({ data, namesCol, valuesCol, title = '' }: PieChartProp
             line: { color: 'white', width: 2 },
           },
           textposition: 'auto',
-          textinfo: 'percent+label',
+          textinfo: 'label+percent' as any,
           textfont: { size: 11, color: '#212529' },
           insidetextfont: { size: 11, color: 'white' },
           outsidetextfont: { size: 11, color: '#212529' },
@@ -115,10 +115,10 @@ export function PieChart({ data, namesCol, valuesCol, title = '' }: PieChartProp
           pull: Array(labels.length).fill(0.02),
           hole: 0.3,
         },
-      ]}
+      ] as any}
       layout={{
         title: { text: title, x: 0.5, xanchor: 'center', font: { size: 16, color: '#212529' } },
-        template: 'plotly_white',
+        template: 'plotly_white' as any,
         height: 520,
         margin: { l: 20, r: 240, t: 100, b: 60 },
         font: { family: 'Arial, sans-serif', size: 12 },
@@ -161,7 +161,7 @@ export function GroupedBarChart({ data, xCol, yCols, title = '' }: GroupedBarCha
 
   return (
     <Plot
-      data={traces}
+      data={traces as any}
       layout={{
         title: { text: title, x: 0.5, xanchor: 'center', font: { size: 16, color: '#212529' } },
         xaxis: {
@@ -180,7 +180,7 @@ export function GroupedBarChart({ data, xCol, yCols, title = '' }: GroupedBarCha
           gridwidth: 1,
         },
         barmode: 'group',
-        template: 'plotly_white',
+        template: 'plotly_white' as any,
         height: 620,
         margin: { l: 60, r: 100, t: 100, b: 280 },
         font: { family: 'Arial, sans-serif', size: 12 },
@@ -225,7 +225,7 @@ export function StackedBarChart({ data, xCol, yCols, title = '' }: GroupedBarCha
 
   return (
     <Plot
-      data={traces}
+      data={traces as any}
       layout={{
         title: { text: title, x: 0.5, xanchor: 'center', font: { size: 20, color: '#212529' } },
         xaxis: {
@@ -250,7 +250,7 @@ export function StackedBarChart({ data, xCol, yCols, title = '' }: GroupedBarCha
           gridwidth: 1,
         },
         barmode: 'stack',
-        template: 'plotly_white',
+        template: 'plotly_white' as any,
         height: 750,
         margin: { l: 90, r: 120, t: 120, b: 550 },
         font: { family: 'Arial, sans-serif', size: 14 },
@@ -300,7 +300,7 @@ export function ScatterChart({ data, xCol, yCol, colorCol, title = '' }: Scatter
 
   return (
     <Plot
-      data={traces}
+      data={traces as any}
       layout={{
         title: { text: title, x: 0.5, xanchor: 'center', font: { size: 16, color: '#212529' } },
         xaxis: {
@@ -313,7 +313,7 @@ export function ScatterChart({ data, xCol, yCol, colorCol, title = '' }: Scatter
           tickfont: { size: 11 },
           automargin: true,
         },
-        template: 'plotly_white',
+        template: 'plotly_white' as any,
         height: 550,
         margin: { l: 50, r: 220, t: 80, b: 60 },
         font: { family: 'Arial, sans-serif', size: 12 },

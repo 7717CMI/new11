@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import { Sidebar, MobileNavbar } from '@/components/sidebar'
+import Image from 'next/image'
 import './globals.css'
 
 export default function RootLayout({
@@ -23,9 +24,13 @@ export default function RootLayout({
         <div className="min-h-screen bg-gray-50">
           {/* Branding with Logo in top left */}
           <div className="logo-container fixed top-0 left-0 z-[60]">
-            <img 
+            <Image 
               src="/logo.png" 
-              alt="COHERENT MARKET INSIGHTS" 
+              alt="COHERENT MARKET INSIGHTS"
+              width={200}
+              height={45}
+              priority
+              style={{ height: '45px', width: 'auto' }}
             />
           </div>
           <MobileNavbar />

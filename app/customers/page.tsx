@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { loadCustomerData, applyFilters, getUniqueValues, FilterState, exportToCSV } from '@/lib/utils'
-import { Customer } from '@/lib/types'
+import { loadCustomerData, applyFilters, getUniqueValues, exportToCSV } from '@/lib/utils'
+import { Customer, FilterState } from '@/lib/types'
 import { DemoDataNotice } from '@/components/demo-notice'
 
 export default function CustomersPage() {
