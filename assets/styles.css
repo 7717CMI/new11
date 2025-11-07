@@ -1,0 +1,489 @@
+/* ===================================
+   CUSTOMER INTELLIGENCE DASHBOARD
+   Custom Styles
+   =================================== */
+
+/* Root Variables - Standard Professional Colors */
+:root {
+    --primary-color: #2E86AB;
+    --secondary-color: #A23B72;
+    --success-color: #06A77D;
+    --warning-color: #F18F01;
+    --danger-color: #C73E1D;
+    --info-color: #6A4C93;
+    --light-bg: #F8F9FA;
+    --dark-text: #212529;
+    --border-color: #DEE2E6;
+    --sidebar-width: 280px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* App Container */
+.app-wrapper {
+    min-height: 100vh;
+    background-color: var(--light-bg);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+    width: var(--sidebar-width);
+    background-color: #ffffff;
+    border-right: 1px solid var(--border-color);
+    padding: 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.sidebar {
+    padding: 20px;
+}
+
+.sidebar-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sidebar-divider {
+    border-top: 2px solid var(--border-color);
+    margin: 15px 0;
+}
+
+.sidebar-section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav .nav-link {
+    color: var(--dark-text);
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(46, 134, 171, 0.1);
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.1rem;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+}
+
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Navbar (Mobile) */
+.navbar-custom {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand-custom {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Page Styles */
+.page-container {
+    max-width: 1400px;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* KPI Cards */
+.kpi-card {
+    border: none;
+    border-radius: 12px;
+    transition: all var(--transition-speed);
+    background: white;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.kpi-icon-container {
+    margin-right: 15px;
+}
+
+.kpi-icon {
+    font-size: 2.5rem;
+}
+
+.kpi-content {
+    flex: 1;
+}
+
+.kpi-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6c757d;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    line-height: 1;
+}
+
+.kpi-subtitle {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Chart Cards */
+.chart-card {
+    border: none;
+    border-radius: 12px;
+    background: white;
+    transition: all var(--transition-speed);
+}
+
+.chart-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Filter Styles - HORIZONTAL LAYOUT */
+.filters-section-horizontal {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+}
+
+.filters-container-horizontal {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.filter-dropdown .Select-control {
+    border-radius: 8px;
+    border-color: var(--border-color);
+}
+
+/* Hide selected values in multi-select dropdowns - show count instead */
+.filter-dropdown .Select-value {
+    display: none !important;
+}
+
+.filter-dropdown .Select-multi-value-wrapper {
+    display: none !important;
+}
+
+/* Ensure placeholder is always visible when items are selected */
+.filter-dropdown .Select-placeholder {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Range Slider Styling */
+.filter-slider {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Deprecated vertical filter styles (kept for backwards compatibility) */
+.filters-section {
+    padding: 0 20px 20px 20px;
+}
+
+.filters-container {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+/* Data Table Styles */
+.dash-table-container {
+    overflow-x: auto;
+}
+
+.dash-spreadsheet {
+    font-family: 'Arial', sans-serif;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner table {
+    border-collapse: collapse;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner th {
+    font-weight: 600;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all var(--transition-speed);
+    padding: 8px 20px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2574a0;
+    border-color: #2574a0;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+/* Insights List */
+.insights-list {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.insights-list li {
+    margin-bottom: 10px;
+}
+
+/* Utility Classes */
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.text-wrap {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+/* Scrollbar Styles */
+.sidebar-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .kpi-value {
+        font-size: 1.5rem;
+    }
+
+    .kpi-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .page-title {
+        font-size: 1.3rem;
+    }
+
+    .kpi-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-container {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Plotly Chart Adjustments */
+.js-plotly-plot .plotly .modebar {
+    display: none !important;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode support */
+    /*
+    :root {
+        --light-bg: #1a1d23;
+        --dark-text: #e9ecef;
+        --border-color: #343a40;
+    }
+
+    body {
+        color: var(--dark-text);
+    }
+
+    .sidebar-container,
+    .kpi-card,
+    .chart-card,
+    .filters-container {
+        background-color: #2b3035;
+        color: var(--dark-text);
+    }
+    */
+}
+
+/* ===================================
+   CHART SECTIONS - IMPROVED LAYOUT
+   =================================== */
+
+/* Section Titles */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+/* Chart Titles within Cards */
+.chart-title {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Chart Cards - Enhanced Spacing */
+.chart-card {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-speed) ease;
+}
+
+.chart-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Dividers between sections */
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 2rem 0;
+}
